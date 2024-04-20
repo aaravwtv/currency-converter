@@ -1,0 +1,29 @@
+<!-- create a web page that takes user inputs as Indian rupees and convert into Dollar -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INR to USD Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.js">
+
+    <script>
+        function convertCurrency() {
+            const inrAmount = parseFloat(document.getElementById("inrAmount").value);
+            const exchangeRate = 0.012; 
+
+            const usdAmount = (inrAmount * exchangeRate).toFixed(2);
+            document.getElementById("result").innerHTML = `${inrAmount} INR is approximately ${usdAmount} USD`;
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>INR to USD Converter</h1>
+    <hr>
+    <p>Enter the amount in Indian Rupees (INR) to convert to US Dollars (USD):</p>
+    <input type="number" id="inrAmount" placeholder="Enter INR amount">
+    <button onclick="convertCurrency()">Convert</button>
+    <p id="result" ></p>
+<hr>
+</body>
+</html>
